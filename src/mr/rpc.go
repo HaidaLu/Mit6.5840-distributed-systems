@@ -26,7 +26,6 @@ type Task struct {
 	taskNumber int
 	inputFile  string
 	startTime  time.Time
-	//attemptCount int
 }
 
 type AssignRequest struct {
@@ -34,12 +33,12 @@ type AssignRequest struct {
 }
 
 type AssignResponse struct {
-	TaskType   Phase  // MAP 或 REDUCE
-	TaskNumber int    // 任务编号
-	InputFile  string // 对于Map任务是输入文件名，对于Reduce任务可以为空
-	NReduce    int    // reduce任务数量（map任务需要知道要生成多少个中间文件）
-	NMap       int    // map任务数量（reduce任务需要知道要读取多少个中间文件）
-	NoTask     bool   // 当前是否没有可用任务
+	TaskType   Phase
+	TaskNumber int
+	InputFile  string
+	NReduce    int
+	NMap       int
+	NoTask     bool
 }
 
 // For task completion communication
